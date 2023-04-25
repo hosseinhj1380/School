@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'home_module.apps.HomeModuleConfig',
     'contact_module',
     'course_module',
-    'django_render_partial'
+    'django_render_partial',
+    'student',
+    'teacher',
 
 ]
 
