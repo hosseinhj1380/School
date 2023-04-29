@@ -6,8 +6,9 @@ from django.utils.deconstruct import deconstructible
 class PhoneValidator(validators.RegexValidator):
     regex = r'^09\d{9}$'
     message = (
-        'Enter a valid mobile number. This value may contain numbers only, '
-        'and must be exactly 11 digits starting with "09"'
+            'لطفا شماره معتبر وارد کنید!'
+        '  شماره باید با"09" آغاز شود '
+
     )
     flags = 0
 
