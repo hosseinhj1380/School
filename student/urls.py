@@ -3,5 +3,5 @@ from django.urls import path, include
 from .views import Signin
 
 urlpatterns = [
-    path('',Signin.as_view())
+    path('signin',Signin.as_view())
 ]

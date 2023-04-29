@@ -5,7 +5,7 @@ from django.views.generic.edit import FormView, CreateView
 from .form import siginform
 from .models import User
 # Create your views here.
-class Signin(CreateView):
+class Signin(FormView):
+    template_name = 'SinginStudent.html'
     form_class = siginform
-    template_name = 'student/SigninTeacher.html'
-
+    success_url = '/'

@@ -1,3 +1,4 @@
+{% extends 'shared/index.html' %}
 <!--<!DOCTYPE html>-->
 <!--<html>-->
 <!--<head>-->
@@ -33,11 +34,128 @@
 <!--<form method="POST" class="post-form">{% csrf_token %}-->
 <!--    {{ form.as_p }}-->
 <!--    <button type="submit" class="save btn btn-default">Save</button>-->
-<!--</form>-->
-<h2>New Person</h2>
+<!--&lt;!&ndash;</form>&ndash;&gt;-->
+<!--<h2>New Person</h2>-->
 
-<form method="GET">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">save</button>
-</form>
+<!--<form method="GET">-->
+<!--    {% csrf_token %}-->
+<!--    {{form.as_p}}-->
+<!--    <button type="submit">save</button>-->
+<!--</form>-->
+
+
+
+
+
+
+
+
+
+
+{% block title %}
+    عضویت
+{% endblock %}
+{% block body %}
+
+	 <div id="contact-page" class="container">
+    	<div class="bg">
+    		<div class="row">
+	    		<div class="col-sm-8">
+	    			<div class="contact-form">
+	    				<h2 class="title text-center">همین حالا عضو شوید </h2>
+	    				<div class="status alert alert-success" style="display: none"></div>
+				    	<form id="main-contact-form" class="contact-form row" name="contact-form" method="post">
+                            {% csrf_token %}
+
+
+                             <div class="form-group col-md-6">
+                                {{ form.last_name.label_tag}}
+                                {{ form.last_name }}
+                                {{ form.last_name.errors }}
+                            </div>
+                            <div class="form-group col-md-6">
+                                {{ form.first_name.label_tag}}
+                                {{ form.first_name }}
+                                {{ form.first_name.errors }}
+                            </div>
+
+				            <div class="form-group col-md-6">
+                                {{ form.email.label_tag}}
+                                {{ form.email }}
+                                {{ form.email.errors }}
+                            </div>
+                            <div class="form-group col-md-6">
+                                {{ form.phonenumber.label_tag}}
+                                {{ form.phonenumber }}
+                                {{ form.phonenumber.errors }}
+                            </div>
+
+                            <div class="form-group col-md-12 ">
+                                {{ form.username.label_tag}}
+                                {{ form.username }}
+                                {{ form.username.errors }}
+                            </div>
+                            <div class="form-group col-md-12 ">
+                                {{ form.password.label_tag}}
+                                {{ form.password }}
+                                {{ form.password.errors  }}
+                            </div>
+
+{#                            <div class="form-group col-md-6">#}
+{#				                <input type="text" name="first_name" class="form-control" required="required" placeholder="نام">#}
+{#				            </div>#}
+{#                            <div class="form-group col-md-6">#}
+{#				                <input type="text" name="last_name" class="form-control" required="required" placeholder="نام خانوادگی">#}
+{#				            </div>#}
+{#				            <div class="form-group col-md-6">#}
+{#				                <input type="email" name="email" class="form-control" required="required" placeholder="ایمیـل">#}
+{#				            </div>#}
+{#				            <div class="form-group col-md-12">#}
+{#				                <input type="tel" name="phonenumber" class="form-control" required="required" placeholder="تلفن همراه">#}
+{#				            </div>#}
+{#                            <div class="form-group col-md-12">#}
+{#				                <input type="text" name="username" class="form-control" required="required" placeholder="نام کاربری">#}
+{#				            </div>#}
+{#                            <div class="form-group col-md-12">#}
+{#				                <input type="password" name="password" class="form-control" required="required" placeholder="رمز عبور">#}
+{#				            </div>#}
+				            <div class="form-group col-md-12">
+				                <input type="submit" name="submit" class="btn btn-primary pull-right" value="ارسـال">
+			            </div>
+				        </form>
+	    			</div>
+	    		</div>
+            </div>
+    	</div>
+     </div>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
