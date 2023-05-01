@@ -4,7 +4,7 @@ from user_module.models import User
 
 class Cart (models.Model):
     user = models.ForeignKey(User,default=0,on_delete=models.CASCADE)
-    course  = models.ForeignKey(Course,default=0, on_delete=models.CASCADE)
+    course = models.ForeignKey(Course,default=0, on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
     date_added = models.DateTimeField(auto_now_add=True)
 

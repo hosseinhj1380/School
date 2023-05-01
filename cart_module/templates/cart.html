@@ -1,4 +1,12 @@
-<h1>Shopping Cart</h1>
+
+{%  extends 'shared/index.html' %}
+
+{% block title %}
+جزییات محصول
+{% endblock %}
+
+{% block body %}
+    {{  <h1>Shopping Cart</h1>
 <table>
     <thead>
         <tr>
@@ -11,9 +19,9 @@
     <tbody>
         {% for item in cart_items %}
             <tr>
-                <td>{{ item.product.name }}</td>
+                <td>{{ item.course.name }}</td>
                 <td>{{ item.quantity }}</td>
-                <td>{{ item.product.price }}</td>
+                <td>{{ item.course.price }}</td>
                 <td>{{ item.get_total_price }}</td>
             </tr>
         {% endfor %}
@@ -24,4 +32,5 @@
             <td>{{ total_price }}</td>
         </tr>
     </tfoot>
-</table>
+</table>}}
+{% endblock%}

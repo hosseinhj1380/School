@@ -1,3 +1,4 @@
+import user_agents.parsers
 from django.views import View
 from django.views.generic import  ListView,CreateView
 from django.contrib.auth.decorators import login_required
@@ -10,8 +11,8 @@ from .models import Course
 class AddToCartView(CreateView):
     @login_required
     def post(self, request, *args, **kwargs):
-        product = get_object_or_404(Course, pk=kwargs['pk'])
-        cart = Cart.objects.create(user=request.user, product=product)
+        course = get_object_or_404(Course, pk=kwargs['pk'])
+        cart = Cart.objects.create(user=request.user, course=course)
         cart.save()
         return redirect('cart')
 
@@ -20,7 +21,10 @@ class CartView(ListView):
     template_name = 'cart.html'
 
     def get_queryset(self):
-        return Cart.objects.filter(user=self.request.user)
+        # email_user=Cart.objects.filter(user__email='hossein@hossein.com').first()
+        # user_id=Cart.objects.id
+        cart_items = Cart.objects.filter(user__email='hossein@hossein.com')
+        return cart_items
 
 class RemoveFromCartView(View):
     @login_required
