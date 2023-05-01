@@ -39,8 +39,7 @@ INSTALLED_APPS = [
     'contact_module',
     'course_module',
     'django_render_partial',
-    'student',
-    'teacher',
+    'user_module'
 
 ]
 
@@ -127,3 +126,4 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+AUTH_USER_MODEL = 'user_module.User'

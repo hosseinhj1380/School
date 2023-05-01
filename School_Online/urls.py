@@ -21,10 +21,10 @@ from School_Online import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/',include('home_module.urls')),
-    path('contact-us',include('contact_module.urls')),
+    path('', include('home_module.urls')),
+    path('contact-us', include('contact_module.urls')),
     path('courses', include('course_module.urls')),
-    path('student/',include('student.urls')),
+    path('register/', include('user_module.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
