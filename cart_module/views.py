@@ -1,4 +1,3 @@
-import user_agents.parsers
 from django.views import View
 from django.views.generic import  ListView,CreateView
 from django.contrib.auth.decorators import login_required
@@ -18,14 +17,14 @@ class AddToCartView(CreateView):
 
 class CartView(ListView):
     model = Cart
-    template_name = 'cart.html'
+    template_name = 'cart_module/cart.html'
 
     def get_queryset(self):
         # email_user=Cart.objects.filter(user__email='hossein@hossein.com').first()
         # user_id=Cart.objects.id
         cart_items = Cart.objects.filter(user__email='hossein@hossein.com')
         total_price = sum(item.get_total_price() for item in cart_items)
-        return render(self.request,'cart.html', {'cart_items': cart_items, 'total_price':total_price})
+        return render(self.request,'cart_module/cart.html', {'cart_items': cart_items, 'total_price':total_price})
 
 class RemoveFromCartView(View):
     @login_required

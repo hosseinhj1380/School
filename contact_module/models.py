@@ -6,6 +6,7 @@ from django.db import models
 class ContactUs(models.Model):
     full_name = models.CharField(max_length=300, verbose_name="نام و نام خانوادگی")
     title = models.CharField(max_length=300, verbose_name="عنوان")
+    site = models.CharField(max_length=300, verbose_name="وبسایت")
     email = models.EmailField(verbose_name="ایمیل")
     message = models.TextField(verbose_name="متن تماس با ما")
     response = models.CharField(max_length=300, verbose_name="پاسخ تماس با ما")

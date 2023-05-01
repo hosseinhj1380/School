@@ -50,32 +50,38 @@ from .models import ContactUs
 class ContactUsModelForm(forms.ModelForm):
     class Meta:
         model = ContactUs
-        fields = ['full_name', 'title', 'email', 'message']
+        fields = ['full_name', 'title', 'email', 'message','site']
         widgets = {
             'full_name': forms.TextInput( attrs={
-                'class': "form-control",
+                'class': "req",
                 'placeholder': "نام و نام خانوادگی ",
-                'name': 'message',
+                'name': 'name',
                 'type': "text"
             }),
             'email': forms.TextInput(attrs={
-                'class': "form-control",
+                'class': "req",
                 'placeholder': "ایمیل",
-                'name': 'message',
+                'name': 'email',
                 'type': "email"
             }),
+            'site': forms.TextInput(attrs={
+                'class': "",
+                'placeholder': "https://",
+                'name': 'site',
+                'type': "text"
+            }),
             'title': forms.TextInput(attrs={
-                'class': "form-control",
-                'placeholder': "عنوان ",
-                'name': 'subject',
+                'class': "req",
+                'placeholder': "موضوع ",
+                'name': 'site',
                 'type': "text"
             }),
             'message': forms.Textarea(attrs={
-                'name': "message",
+                'name': "name",
                 'id': "message",
                 'class': "form-control",
                 'rows': "8",
-                'placeholder': "متن تماس با ما",
+                'placeholder': "متن پیامتان را بنویسید",
                 'cols': 'None'
 
             })
@@ -83,9 +89,10 @@ class ContactUsModelForm(forms.ModelForm):
         }
         labels = {
             'full_name': 'نام و نام خانوادگی',
-            'title': 'عنوان',
+            'title': 'موضوع',
             'email': 'ایمیل',
-            'message': 'متن تماس با ما'
+            'message': 'پیام',
+            "site" : "وبسایت"
         }
         error_messages = {
             'full_name': {

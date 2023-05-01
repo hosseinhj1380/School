@@ -29,6 +29,7 @@
         <option value="$MODULE_DIR$/contact_module/templates" />
         <option value="$MODULE_DIR$/course_module/templates" />
         <option value="$MODULE_DIR$/user_module/templates" />
+        <option value="$MODULE_DIR$/cart_module/templates" />
       </list>
     </option>
   </component>
