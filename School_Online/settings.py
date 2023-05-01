@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'contact_module',
     'course_module',
     'django_render_partial',
-    'user_module'
+    'user_module',
+    'cart_module',
 
 ]
 

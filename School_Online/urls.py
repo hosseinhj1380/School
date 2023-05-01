@@ -25,6 +25,7 @@ urlpatterns = [
     path('contact-us', include('contact_module.urls')),
     path('courses', include('course_module.urls')),
     path('register/', include('user_module.urls')),
+    path('cart',include('cart_module.urls'))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
