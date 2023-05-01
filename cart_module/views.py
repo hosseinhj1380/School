@@ -2,7 +2,7 @@ import user_agents.parsers
 from django.views import View
 from django.views.generic import  ListView,CreateView
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import get_object_or_404, redirect
+from django.shortcuts import get_object_or_404, redirect,render
 from django.views.generic import View
 from .models import Cart
 from .models import Course
@@ -24,7 +24,8 @@ class CartView(ListView):
         # email_user=Cart.objects.filter(user__email='hossein@hossein.com').first()
         # user_id=Cart.objects.id
         cart_items = Cart.objects.filter(user__email='hossein@hossein.com')
-        return cart_items
+        total_price = sum(item.get_total_price() for item in cart_items)
+        return render(self.request,'cart.html', {'cart_items': cart_items, 'total_price':total_price})
 
 class RemoveFromCartView(View):
     @login_required

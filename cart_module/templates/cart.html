@@ -19,9 +19,9 @@
     <tbody>
         {% for item in cart_items %}
             <tr>
-                <td>{{ item.course.name }}</td>
+                <td>{{ item.course__name }}</td>
                 <td>{{ item.quantity }}</td>
-                <td>{{ item.course.price }}</td>
+                <td>{{ item.course__price }}</td>
                 <td>{{ item.get_total_price }}</td>
             </tr>
         {% endfor %}
